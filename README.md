@@ -1,2 +1,1 @@
-# CuisineCash
-Cashier App
+Cuisine Cash (Aplikasi Kasir)
