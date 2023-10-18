@@ -3,9 +3,11 @@ import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 const NavBar = () => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary ">
+      <Navbar expand="lg" variant="dark" className="navbar navbar-dark">
         <Container>
-          <Navbar.Brand href="#home">CuisineCash</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <strong>Cuisine</strong>Cash
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
