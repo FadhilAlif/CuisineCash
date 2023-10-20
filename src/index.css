@@ -6,11 +6,15 @@ body {
 }
 
 .navbar {
-  background-color: #064e32;
+  background-color: #ff7a28;
+}
+
+.Navbar-brand {
+  color: #0C085C;
 }
 
 .categories-active {
-  background-color: #064e32;
+  background-color: #ff7a28;
   color: #ffffff;
 }
 

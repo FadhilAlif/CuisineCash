@@ -1,6 +1,6 @@
 import { Col, ListGroup } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { API_URL } from "../../api/api";
+// import { API_URL } from "../../api/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMugSaucer,
@@ -11,6 +11,7 @@ import axios from "axios";
 
 const ListCategories = ({ selectedCategories, handleCategories }) => {
   const [categories, setCategories] = useState([]);
+  const url = import.meta.env.VITE_API_URL;
 
   const Icons = ({ nama }) => {
     if (nama === "Makanan") {
@@ -26,7 +27,7 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
 
   useEffect(() => {
     axios
-      .get(API_URL + "categories")
+      .get(url + "categories")
       .then((res) => {
         // console.log("isi res GET", res);
         const categories = res.data;
@@ -39,7 +40,10 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
 
   return (
     <Col md={2}>
-      <h4>List Categories</h4>
+      <h4>
+        <strong>List Categories</strong>
+      </h4>
+      <hr />
       <ListGroup>
         {categories &&
           categories.map((category) => {
