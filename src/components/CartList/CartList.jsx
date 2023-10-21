@@ -1,9 +1,10 @@
 import { Row, Col, Badge, ListGroup } from "react-bootstrap";
 import { numberWithCommas } from "../../utils/utils";
 import { useEffect } from "react";
+import { CartTotal } from "../Component";
 
 const CartList = ({ cartList, getCartData }) => {
-  //Data Infinite Loop 
+  // Data Infinite Loop
   useEffect(() => {
     getCartData();
   }, []);
@@ -18,7 +19,7 @@ const CartList = ({ cartList, getCartData }) => {
         <ListGroup>
           {cartList.map((cartItem) => (
             <ListGroup.Item
-              className="justify-content-between align-items-start"
+              className="d-flex justify-content-between align-items-start"
               key={cartItem.product.id}
             >
               <Row>
@@ -31,30 +32,26 @@ const CartList = ({ cartList, getCartData }) => {
                       cartItem.product.gambar
                     }
                     alt={cartItem.product.nama}
-                    style={{ width: "120px" }}
+                    style={{ width: "100%" }}
                   />
                 </Col>
                 <Col>
                   <p>
                     <strong>{cartItem.product.nama}</strong>
                   </p>
-                  <p>Rp.{numberWithCommas(cartItem.product.harga)}</p>
-                </Col>
-                <Col className="text-center">
-                  <Badge bg="primary" pill className="">
-                    {cartItem.jumlah}
-                  </Badge>
-                </Col>
-                <Col>
-                  <strong className="float-right">
-                    Rp.{numberWithCommas(cartItem.total_harga)}
-                  </strong>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p>Rp.{numberWithCommas(cartItem.product.harga)}</p>
+                    <Badge bg="primary" pill className="">
+                      {cartItem.jumlah}
+                    </Badge>
+                  </div>
                 </Col>
               </Row>
             </ListGroup.Item>
           ))}
         </ListGroup>
       )}
+      <CartTotal cartList={cartList} />
     </Col>
   );
 };
