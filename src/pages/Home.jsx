@@ -91,10 +91,10 @@ const Home = () => {
           product: value,
         };
 
-        await axios.put(
-          url + "keranjangs/" + existingCartItem.id,
-          updatedCartItem
-        );
+        await axios
+          .put(url + "keranjangs/" + existingCartItem.id, updatedCartItem)
+          .then(() => getCartData())
+          .catch((err) => console.log(err));
       }
       // Swal menampilkan pesan sukses
       Swal.fire({
