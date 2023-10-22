@@ -1,13 +1,51 @@
 import { Row, Col, Badge, ListGroup } from "react-bootstrap";
 import { numberWithCommas } from "../../utils/utils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CartTotal } from "../Component";
+import CartModal from "../CartModal/CartModal";
 
 const CartList = ({ cartList, getCartData }) => {
-  // Data Infinite Loop
+  const [show, setShow] = useState(false);
+  const [cartDetail, setCartDetail] = useState(false);
+  const [jumlah, setJumlah] = useState(0);
+  const [keterangan, setKeterangan] = useState("");
+  // const [selectedCartItem, setSelectedCartItem] = useState(null);
+
   useEffect(() => {
     getCartData();
   }, []);
+
+  const handleShow = (cartItem) => {
+    setShow(true);
+    setCartDetail(cartItem);
+    setJumlah(cartItem.jumlah);
+    setKeterangan(cartItem.keterangan);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  const tambah = () => {
+    setJumlah(jumlah + 1);
+  };
+
+  const kurang = () => {
+    if (jumlah !== 1) {
+      setJumlah(jumlah - 1);
+    }
+  };
+
+  const handleChange = (e) => {
+    setKeterangan(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleClose();
+
+    console.log("Keterangan : ", keterangan);
+  };
 
   return (
     <Col md={3}>
@@ -16,11 +54,12 @@ const CartList = ({ cartList, getCartData }) => {
       </h4>
       <hr />
       {cartList.length !== 0 && (
-        <ListGroup>
+        <ListGroup className="cart-border">
           {cartList.map((cartItem) => (
             <ListGroup.Item
               className="d-flex justify-content-between align-items-start"
-              key={cartItem.product.id}
+              key={cartItem.id}
+              onClick={() => handleShow(cartItem)}
             >
               <Row>
                 <Col>
@@ -49,6 +88,16 @@ const CartList = ({ cartList, getCartData }) => {
               </Row>
             </ListGroup.Item>
           ))}
+          <CartModal
+            show={show}
+            handleClose={handleClose}
+            cartDetail={cartDetail}
+            jumlah={jumlah}
+            tambah={tambah}
+            kurang={kurang}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          />
         </ListGroup>
       )}
       <CartTotal cartList={cartList} />
