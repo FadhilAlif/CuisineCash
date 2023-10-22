@@ -9,21 +9,26 @@ body {
   background-color: #ff7a28;
 }
 
-.Navbar-brand {
-  color: #0c085c;
-}
-
 .categories-active {
   background-color: #ff7a28;
   color: #ffffff;
+}
+
+.cart-border {
+  border-color: #ff7a28;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .btn-primary {
   background-color: #ff7a28;
 }
 
+.btn-primary:hover {
+  background-color: #f79457;
+}
+
 .order {
-  width: 320px;
   height: 88px;
   border-radius: 24px;
   flex-shrink: 0;
