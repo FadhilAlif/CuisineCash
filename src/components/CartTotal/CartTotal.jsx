@@ -22,6 +22,14 @@ const CartTotal = ({ cartList }) => {
         console.log("isi res POST", res);
         // Navigasi ke halaman sukses
         navigate("/success");
+
+        // Mengosongkan Cart List
+        cartList.map(function (cartItem) {
+          return axios
+            .delete(url + "keranjangs/" + cartItem.id)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -35,7 +43,7 @@ const CartTotal = ({ cartList }) => {
     <div className="fixed-bottom">
       <Row>
         <Col md={{ span: 3, offset: 9 }} className="order py-4">
-          <strong className="px-3">Rp.{numberWithCommas(CartTotal)}</strong>
+          <strong className="px-3">Rp. {numberWithCommas(CartTotal)}</strong>
           <Button
             className="btn-cart float-end px-5"
             onClick={() => submitOrder(CartTotal)}
