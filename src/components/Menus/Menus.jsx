@@ -4,7 +4,7 @@ import { numberWithCommas } from "../../utils/utils";
 const Menus = ({ menu, addCart }) => {
   return (
     <Col md={4} xs={6} className="mb-4">
-      <Card onClick={() => addCart(menu)}>
+      <Card style={{ height: "100%" }} onClick={() => addCart(menu)}>
         <Card.Img
           variant="top"
           src={
@@ -15,9 +15,7 @@ const Menus = ({ menu, addCart }) => {
           }
         />
         <Card.Body>
-          <Card.Title>
-            {menu.nama} ({menu.kode})
-          </Card.Title>
+          <Card.Title>{menu.nama}</Card.Title>
           <Card.Text>
             <strong>Rp.{numberWithCommas(menu.harga)}</strong>
           </Card.Text>

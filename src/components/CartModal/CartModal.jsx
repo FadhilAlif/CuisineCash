@@ -13,6 +13,8 @@ const CartModal = ({
   kurang,
   handleSubmit,
   handleChange,
+  totalPrice,
+  handleDelete,
 }) => {
   if (cartDetail) {
     return (
@@ -28,7 +30,7 @@ const CartModal = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
               <p>
-                <strong>Rp. {numberWithCommas(cartDetail.total_harga)}</strong>
+                <strong>Rp. {numberWithCommas(totalPrice)}</strong>
               </p>
               <Form.Control type="email" placeholder="name@example.com" />
             </Form.Group>
@@ -64,7 +66,7 @@ const CartModal = ({
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
+          <Button variant="danger" onClick={() => handleDelete(cartDetail.id)}>
             <FontAwesomeIcon icon={faTrash} /> Delete Item
           </Button>
         </Modal.Footer>

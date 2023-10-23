@@ -11,6 +11,7 @@ const Home = () => {
   const url = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
+    // Mengambil semua data MENUS dari API
     axios
       .get(url + "products")
       .then((res) => {
@@ -18,14 +19,14 @@ const Home = () => {
         const menus = res.data;
         setMenus(menus);
       })
-      .catch((err) => {
-        console.log("GET error bos", err);
-      });
+      .catch((err) => console.log(err));
 
+    // Mengambil semua data CART dari API (getCartData)
     getCartData();
   }, []);
 
   const getCartData = () => {
+    // Mengambil semua data CART dari API
     axios
       .get(url + "keranjangs")
       .then((res) => {
@@ -33,36 +34,21 @@ const Home = () => {
         const cartList = res.data;
         setCartList(cartList);
       })
-      .catch((err) => {
-        console.log("GET error bos", err);
-      });
+      .catch((err) => console.log(err));
   };
-  // useEffect(() => {
-  //   const fetchCartData = async () => {
-  //     try {
-  //       const cartResponse = await axios.get(url + "keranjangs");
-  //       setCartList(cartResponse.data);
-  //     } catch (error) {
-  //       console.error("Error fetching cart data:", error);
-  //     }
-  //   };
-
-  //   fetchCartData();
-  // }, [url, cartList]);
 
   const handleCategories = (category) => {
+    // Filter data MENUS berdasarkan category
     setSelectedCategories(category);
     console.log(category);
 
     axios
-      .get(url + "products?category.nama=" + category) // Use the updated value
+      .get(url + "products?category.nama=" + category)
       .then((res) => {
         const menus = res.data;
         setMenus(menus);
       })
-      .catch((err) => {
-        console.log("GET error bos", err);
-      });
+      .catch((err) => console.log(err));
   };
 
   const addCart = async (value) => {
@@ -104,8 +90,8 @@ const Home = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-    } catch (error) {
-      console.error("Error:", error);
+    } catch (err) {
+      console.error("Error:", err);
     }
   };
 

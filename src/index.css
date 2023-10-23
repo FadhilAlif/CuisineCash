@@ -1,3 +1,7 @@
+/* :root {
+  
+} */
+
 body {
   margin: 0;
   font-family: "OpenSans", sans-serif;
@@ -12,12 +16,6 @@ body {
 .categories-active {
   background-color: #ff7a28;
   color: #ffffff;
-}
-
-.cart-border {
-  border-color: #ff7a28;
-  border-style: solid;
-  border-width: 1px;
 }
 
 .btn-primary {
@@ -41,6 +39,16 @@ body {
   border-radius: 24px;
   padding: 8px 16px;
   color: #000;
+}
+
+.cart-list {
+  border-color: #ff7a28;
+  border-style: solid;
+  height: 650px;
+}
+
+.overflow-auto::-webkit-scrollbar {
+  display: none;
 }
 /* @media (prefers-color-scheme: light) {
   :root {

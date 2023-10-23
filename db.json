@@ -16,8 +16,8 @@
   "products": [
     {
       "id": 1,
-      "kode": "K-01",
       "nama": "Sate Ayam",
+      "desc": "",
       "harga": 16000,
       "is_ready": true,
       "gambar": "sate-ayam.jpg",
@@ -28,7 +28,6 @@
     },
     {
       "id": 2,
-      "kode": "K-02",
       "nama": "Nasi Goreng Telur",
       "harga": 14000,
       "is_ready": true,
@@ -40,7 +39,6 @@
     },
     {
       "id": 3,
-      "kode": "K-03",
       "nama": "Nasi Rames",
       "harga": 12000,
       "is_ready": true,
@@ -52,7 +50,6 @@
     },
     {
       "id": 4,
-      "kode": "K-04",
       "nama": "Lontong Opor Ayam",
       "harga": 18000,
       "is_ready": true,
@@ -64,7 +61,6 @@
     },
     {
       "id": 5,
-      "kode": "K-05",
       "nama": "Mie Goreng",
       "harga": 13000,
       "is_ready": true,
@@ -76,7 +72,6 @@
     },
     {
       "id": 6,
-      "kode": "K-06",
       "nama": "Bakso",
       "harga": 10000,
       "is_ready": true,
@@ -88,7 +83,6 @@
     },
     {
       "id": 7,
-      "kode": "K-07",
       "nama": "Mie Ayam Bakso",
       "harga": 14000,
       "is_ready": true,
@@ -100,7 +94,6 @@
     },
     {
       "id": 8,
-      "kode": "K-08",
       "nama": "Pangsit 6 Pcs",
       "harga": 5000,
       "is_ready": true,
@@ -112,7 +105,6 @@
     },
     {
       "id": 9,
-      "kode": "K-09",
       "nama": "Kentang Goreng",
       "harga": 5000,
       "is_ready": true,
@@ -124,19 +116,17 @@
     },
     {
       "id": 10,
-      "kode": "K-10",
       "nama": "Cheese Burger",
       "harga": 15000,
       "is_ready": true,
       "gambar": "cheese-burger.jpg",
       "category": {
-        "id": 3,
-        "nama": "Cemilan"
+        "id": 1,
+        "nama": "Makanan"
       }
     },
     {
       "id": 11,
-      "kode": "K-11",
       "nama": "Coffe Late",
       "harga": 15000,
       "is_ready": true,
@@ -148,7 +138,6 @@
     },
     {
       "id": 12,
-      "kode": "K-12",
       "nama": "Es Jeruk",
       "harga": 7000,
       "is_ready": true,
@@ -160,7 +149,6 @@
     },
     {
       "id": 13,
-      "kode": "K-13",
       "nama": "Es Teh",
       "harga": 5000,
       "is_ready": true,
@@ -172,7 +160,6 @@
     },
     {
       "id": 14,
-      "kode": "K-14",
       "nama": "Teh Hangat",
       "harga": 3000,
       "is_ready": true,
@@ -184,7 +171,6 @@
     },
     {
       "id": 15,
-      "kode": "K-15",
       "nama": "Tenderloin Steak",
       "harga": 38000,
       "is_ready": true,
@@ -195,53 +181,16 @@
       }
     }
   ],
-  "keranjangs": [
-    {
-      "jumlah": 1,
-      "total_harga": 10000,
-      "product": {
-        "id": 6,
-        "kode": "K-06",
-        "nama": "Bakso",
-        "harga": 10000,
-        "is_ready": true,
-        "gambar": "bakso.jpg",
-        "category": {
-          "id": 1,
-          "nama": "Makanan"
-        }
-      },
-      "id": 1
-    }
-  ],
+  "keranjangs": [],
   "pesanans": [
     {
-      "total_bayar": 60000,
+      "total_bayar": 14000,
       "menus": [
         {
-          "jumlah": 2,
-          "total_harga": 32000,
-          "product": {
-            "id": 1,
-            "kode": "K-01",
-            "nama": "Sate Ayam",
-            "harga": 16000,
-            "is_ready": true,
-            "gambar": "sate-ayam.jpg",
-            "category": {
-              "id": 1,
-              "nama": "Makanan"
-            }
-          },
-          "keterangan": "Semuanya Pedas",
-          "id": 1
-        },
-        {
-          "jumlah": 2,
-          "total_harga": 28000,
+          "jumlah": 1,
+          "total_harga": 14000,
           "product": {
             "id": 2,
-            "kode": "K-02",
             "nama": "Nasi Goreng Telur",
             "harga": 14000,
             "is_ready": true,
@@ -251,10 +200,123 @@
               "nama": "Makanan"
             }
           },
-          "id": 3
+          "id": 1
         }
       ],
       "id": 1
+    },
+    {
+      "total_bayar": 12000,
+      "menus": [
+        {
+          "jumlah": 1,
+          "total_harga": 12000,
+          "product": {
+            "id": 3,
+            "nama": "Nasi Rames",
+            "harga": 12000,
+            "is_ready": true,
+            "gambar": "nasi-rames.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "total_bayar": 0,
+      "menus": [],
+      "id": 3
+    },
+    {
+      "total_bayar": 68000,
+      "menus": [
+        {
+          "jumlah": 1,
+          "total_harga": 12000,
+          "product": {
+            "id": 3,
+            "nama": "Nasi Rames",
+            "harga": 12000,
+            "is_ready": true,
+            "gambar": "nasi-rames.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 1
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 28000,
+          "product": {
+            "id": 2,
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 2
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 13000,
+          "product": {
+            "id": 5,
+            "nama": "Mie Goreng",
+            "harga": 13000,
+            "is_ready": true,
+            "gambar": "mie-goreng.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 3
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 5000,
+          "product": {
+            "id": 8,
+            "nama": "Pangsit 6 Pcs",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "pangsit.jpg",
+            "category": {
+              "id": 3,
+              "nama": "Cemilan"
+            }
+          },
+          "id": 4
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 10000,
+          "product": {
+            "id": 6,
+            "nama": "Bakso",
+            "harga": 10000,
+            "is_ready": true,
+            "gambar": "bakso.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 5
+        }
+      ],
+      "id": 4
     }
   ]
 }

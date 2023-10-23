@@ -14,6 +14,7 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
   const url = import.meta.env.VITE_API_URL;
 
   const Icons = ({ nama }) => {
+    // Menampilkan Icon berdasarkan nama category
     if (nama === "Makanan") {
       return <FontAwesomeIcon icon={faUtensils} />;
     }
@@ -26,10 +27,10 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
   };
 
   useEffect(() => {
+    // Mengambil semua data CATEGORIES dari API
     axios
       .get(url + "categories")
       .then((res) => {
-        // console.log("isi res GET", res);
         const categories = res.data;
         setCategories(categories);
       })

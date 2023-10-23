@@ -10,17 +10,23 @@ const CartTotal = ({ cartList }) => {
   const navigate = useNavigate();
 
   const submitOrder = (totalBayar) => {
-    const pesanan = {
+    const order = {
       total_bayar: totalBayar,
       menus: cartList,
     };
 
-    axios.post(url + "pesanans", pesanan).then((res) => {
-      console.log("isi res POST", res);
-      navigate("/success");
-    });
+    // Mengirimkan pesanan ke API
+    axios
+      .post(url + "pesanans", order)
+      .then((res) => {
+        console.log("isi res POST", res);
+        // Navigasi ke halaman sukses
+        navigate("/success");
+      })
+      .catch((err) => console.log(err));
   };
 
+  // Menghitung total bayar dari item - item di Cart
   const CartTotal = cartList.reduce(function (result, item) {
     return result + item.total_harga;
   }, 0);
@@ -29,9 +35,9 @@ const CartTotal = ({ cartList }) => {
     <div className="fixed-bottom">
       <Row>
         <Col md={{ span: 3, offset: 9 }} className="order py-4">
-          <strong>Rp.{numberWithCommas(CartTotal)}</strong>
+          <strong className="px-3">Rp.{numberWithCommas(CartTotal)}</strong>
           <Button
-            className="btn-cart float-end"
+            className="btn-cart float-end px-5"
             onClick={() => submitOrder(CartTotal)}
           >
             <FontAwesomeIcon icon={faShoppingCart} /> <strong>Order</strong>
