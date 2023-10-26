@@ -60,7 +60,6 @@ const Login = () => {
                 type="submit"
                 onClick={onLogin}
                 className="w-100 mt-5"
-                block
               >
                 Login
               </Button>
