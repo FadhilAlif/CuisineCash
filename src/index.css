@@ -9,6 +9,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public//assets/images/Loginbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.login-container {
+  background-color: #ededed;
+  padding: 40px;
+  margin: 100px auto;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .navbar {
   background-color: #ff7a28;
 }
@@ -44,21 +69,29 @@ body {
 .cart-list {
   border-color: #ff7a28;
   border-style: solid;
-  height: 650px;
+  height: 850px;
 }
 
 .overflow-auto::-webkit-scrollbar {
   display: none;
 }
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+@media only screen and (max-height: 1440px) {
+  .cart-list {
+    height: 650px;
   }
-  a:hover {
-    color: #747bff;
+
+  .menus {
+    height: 800px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media only screen and (max-height: 1000px) {
+  .cart-list {
+    height: 400px;
   }
-} */
+
+  .menus {
+    height: 550px;
+  }
+}
