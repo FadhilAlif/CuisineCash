@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <Navbar expand="sm" variant="dark" className="navbar">
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <img
             alt=""
             src="/src/assets/react.svg"
@@ -17,7 +17,8 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/history">History</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
