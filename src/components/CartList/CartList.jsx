@@ -5,6 +5,8 @@ import { CartTotal } from "../Component";
 import CartModal from "../CartModal/CartModal";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const CartList = ({ cartList, getCartData }) => {
   const [show, setShow] = useState(false);
@@ -74,6 +76,8 @@ const CartList = ({ cartList, getCartData }) => {
           icon: "success",
           title: "Success Update Item",
           text: `Menu ${cartDetail.product.nama} Updated`,
+          showConfirmButton: false,
+          timer: 1500,
         });
         getCartData();
       })
@@ -92,6 +96,8 @@ const CartList = ({ cartList, getCartData }) => {
           icon: "error",
           title: "Success Delete Item",
           text: `Menu ${cartDetail.product.nama} Deleted`,
+          showConfirmButton: false,
+          timer: 1500,
         });
         getCartData();
       })
@@ -136,6 +142,10 @@ const CartList = ({ cartList, getCartData }) => {
                         {cartItem.jumlah}
                       </Badge>
                     </div>
+                    <p className="text-muted" style={{ fontSize: "14px" }}>
+                      <FontAwesomeIcon icon={faPenToSquare} />{" "}
+                      {cartItem.keterangan}
+                    </p>
                   </Col>
                 </Row>
               </ListGroup.Item>
