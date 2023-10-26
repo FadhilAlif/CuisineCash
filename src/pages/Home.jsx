@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { ListCategories, CartList, Menus } from "../components/Component";
+import {
+  ListCategories,
+  CartList,
+  Menus,
+  NavBar,
+} from "../components/Component";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -97,24 +102,29 @@ const Home = () => {
   };
 
   return (
-    <div className="mt-3">
-      <Container fluid>
-        <Row>
-          <ListCategories
-            selectedCategories={selectedCategories}
-            handleCategories={handleCategories}
-          />
-          <Col>
-            <Row>
-              {menus &&
-                menus.map((menu) => {
-                  return <Menus key={menu.id} menu={menu} addCart={addCart} />;
-                })}
-            </Row>
-          </Col>
-          <CartList cartList={cartList} getCartData={getCartData} />
-        </Row>
-      </Container>
+    <div>
+      <NavBar />
+      <div className="mt-3">
+        <Container fluid>
+          <Row>
+            <ListCategories
+              selectedCategories={selectedCategories}
+              handleCategories={handleCategories}
+            />
+            <Col className="mt-2">
+              <Row className="overflow-auto menus">
+                {menus &&
+                  menus.map((menu) => {
+                    return (
+                      <Menus key={menu.id} menu={menu} addCart={addCart} />
+                    );
+                  })}
+              </Row>
+            </Col>
+            <CartList cartList={cartList} getCartData={getCartData} />
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 };

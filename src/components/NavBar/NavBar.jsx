@@ -1,24 +1,30 @@
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Button } from "react-bootstrap";
 
 const NavBar = () => {
   return (
     <Navbar expand="sm" variant="dark" className="navbar">
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="/home">
           <img
             alt=""
-            src="/src/assets/react.svg"
-            width="30"
-            height="30"
+            src="/public/assets/images/logo.png"
+            width="100%"
+            height="35px"
             className="d-inline-block align-top"
           />{" "}
-          CuisineCash
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/history">History</Nav.Link>
+          <Nav className="ms-auto gap-2">
+            <Button variant="light" href="/home">
+              Home
+            </Button>
+            <Button variant="light" href="/history">
+              History
+            </Button>
+            <Button variant="light" href="/chatai">
+              Chat AI
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

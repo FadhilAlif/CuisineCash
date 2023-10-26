@@ -16,13 +16,13 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
   const Icons = ({ nama }) => {
     // Menampilkan Icon berdasarkan nama category
     if (nama === "Makanan") {
-      return <FontAwesomeIcon icon={faUtensils} />;
+      return <FontAwesomeIcon className="ms-3" icon={faUtensils} />;
     }
     if (nama === "Minuman") {
-      return <FontAwesomeIcon icon={faMugSaucer} />;
+      return <FontAwesomeIcon className="ms-2" icon={faMugSaucer} />;
     }
     if (nama === "Cemilan") {
-      return <FontAwesomeIcon icon={faPizzaSlice} />;
+      return <FontAwesomeIcon className="ms-3" icon={faPizzaSlice} />;
     }
   };
 
@@ -40,9 +40,9 @@ const ListCategories = ({ selectedCategories, handleCategories }) => {
   }, []);
 
   return (
-    <Col md={2}>
+    <Col md={2} className="mt-2">
       <h4>
-        <strong>List Categories</strong>
+        <strong>Categories</strong>
       </h4>
       <hr />
       <ListGroup>

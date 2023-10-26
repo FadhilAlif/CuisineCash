@@ -105,12 +105,14 @@ const CartList = ({ cartList, getCartData }) => {
   };
 
   return (
-    <Col md={3}>
+    <Col md={3} className="mt-2">
       <h4>
         <strong>Cart List</strong>
       </h4>
       <hr />
-      {cartList.length !== 0 && (
+      {cartList.length === 0 ? (
+        <p className="text-center text-muted">Cart List is still empty...</p>
+      ) : (
         <Card className="overflow-auto cart-list">
           <ListGroup>
             {cartList.map((cartItem) => (
