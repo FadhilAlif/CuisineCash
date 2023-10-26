@@ -32,7 +32,6 @@ const CartModal = ({
               <p>
                 <strong>Rp. {numberWithCommas(totalPrice)}</strong>
               </p>
-              <Form.Control type="email" placeholder="name@example.com" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Jumlah :</Form.Label>
