@@ -74,6 +74,7 @@ const Home = () => {
         const updatedCartItem = {
           jumlah: existingCartItem.jumlah + 1,
           total_harga: existingCartItem.total_harga + value.harga,
+          keterangan: existingCartItem.keterangan,
           product: value,
         };
 
