@@ -17,7 +17,6 @@
     {
       "id": 1,
       "nama": "Sate Ayam",
-      "desc": "",
       "harga": 16000,
       "is_ready": true,
       "gambar": "sate-ayam.jpg",
@@ -62,7 +61,7 @@
     {
       "id": 5,
       "nama": "Mie Goreng",
-      "harga": 13000,
+      "harga": 14000,
       "is_ready": true,
       "gambar": "mie-goreng.jpg",
       "category": {
@@ -73,7 +72,7 @@
     {
       "id": 6,
       "nama": "Bakso",
-      "harga": 10000,
+      "harga": 15000,
       "is_ready": true,
       "gambar": "bakso.jpg",
       "category": {
@@ -84,7 +83,7 @@
     {
       "id": 7,
       "nama": "Mie Ayam Bakso",
-      "harga": 14000,
+      "harga": 18000,
       "is_ready": true,
       "gambar": "mie-ayam-bakso.jpg",
       "category": {
@@ -95,7 +94,7 @@
     {
       "id": 8,
       "nama": "Pangsit 6 Pcs",
-      "harga": 5000,
+      "harga": 10000,
       "is_ready": true,
       "gambar": "pangsit.jpg",
       "category": {
@@ -106,7 +105,7 @@
     {
       "id": 9,
       "nama": "Kentang Goreng",
-      "harga": 5000,
+      "harga": 8000,
       "is_ready": true,
       "gambar": "kentang-goreng.jpg",
       "category": {
@@ -128,7 +127,7 @@
     {
       "id": 11,
       "nama": "Coffe Late",
-      "harga": 15000,
+      "harga": 13000,
       "is_ready": true,
       "gambar": "coffe-late.jpg",
       "category": {
@@ -139,7 +138,7 @@
     {
       "id": 12,
       "nama": "Es Jeruk",
-      "harga": 7000,
+      "harga": 5000,
       "is_ready": true,
       "gambar": "es-jeruk.jpg",
       "category": {
@@ -161,7 +160,7 @@
     {
       "id": 14,
       "nama": "Teh Hangat",
-      "harga": 3000,
+      "harga": 4000,
       "is_ready": true,
       "gambar": "teh-hangat.jpg",
       "category": {
@@ -179,8 +178,43 @@
         "id": 1,
         "nama": "Makanan"
       }
+    },
+    {
+      "id": 16,
+      "nama": "Nugget",
+      "harga": 9000,
+      "is_ready": true,
+      "gambar": "nugget.jpg",
+      "category": {
+        "id": 3,
+        "nama": "Cemilan"
+      }
     }
   ],
   "keranjangs": [],
-  "pesanans": []
+  "pesanans": [
+    {
+      "total_bayar": 42000,
+      "menus": [
+        {
+          "jumlah": 3,
+          "keterangan": "pedas banget",
+          "total_harga": 42000,
+          "product": {
+            "id": 2,
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 1
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
