@@ -7,7 +7,7 @@ const Success = () => {
       <Image src="/assets/images/Success.png" width={500} />
       <h1>Order Successfully</h1>
       <p>Thanks for your order!</p>
-      <Button variant="primary" as={Link} to="/">
+      <Button variant="primary" as={Link} to="/home">
         Go Back
       </Button>
     </div>
