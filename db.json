@@ -192,29 +192,5 @@
     }
   ],
   "keranjangs": [],
-  "pesanans": [
-    {
-      "total_bayar": 42000,
-      "menus": [
-        {
-          "jumlah": 3,
-          "keterangan": "pedas banget",
-          "total_harga": 42000,
-          "product": {
-            "id": 2,
-            "nama": "Nasi Goreng Telur",
-            "harga": 14000,
-            "is_ready": true,
-            "gambar": "nasi-goreng-telor.jpg",
-            "category": {
-              "id": 1,
-              "nama": "Makanan"
-            }
-          },
-          "id": 1
-        }
-      ],
-      "id": 1
-    }
-  ]
+  "pesanans": []
 }
