@@ -139,21 +139,23 @@ const CartList = ({ cartList, getCartData }) => {
                       <strong>{cartItem.product.nama}</strong>
                     </p>
                     <div className="d-flex justify-content-between align-items-center">
-                      <p>Rp.{numberWithCommas(cartItem.product.harga)}</p>
+                      <p className="text-muted">
+                        Rp.{numberWithCommas(cartItem.product.harga)}
+                      </p>
                       <Badge pill className="btn-primary" bg="btn-primary">
                         {cartItem.jumlah}
                       </Badge>
                     </div>
                     <p className="text-muted" style={{ fontSize: "14px" }}>
                       <FontAwesomeIcon icon={faPenToSquare} />{" "}
-                      {cartItem.keterangan}
+                      {cartItem.keterangan ? cartItem.keterangan : "Note"}
                     </p>
                   </Col>
                 </Row>
               </ListGroup.Item>
             ))}
             <CartModal
-              show={show}
+              show={show} 
               handleClose={handleClose}
               cartDetail={cartDetail}
               jumlah={jumlah}
