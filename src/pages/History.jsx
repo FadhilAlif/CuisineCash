@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { NavBar } from "../components/Component";
 
 const History = () => {
   const url = import.meta.env.VITE_API_URL;
@@ -18,8 +17,6 @@ const History = () => {
   }, []);
 
   return (
-    <div>
-      <NavBar />
       <div className="mt-4">
         <h4 className="text-center">
           <strong>Order History</strong>
@@ -53,7 +50,6 @@ const History = () => {
           </tbody>
         </Table>
       </div>
-    </div>
   );
 };
 

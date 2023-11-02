@@ -4,25 +4,25 @@ import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
-        navigate("/home");
         sessionStorage.setItem("user", JSON.stringify(user));
+        onLogin(); // Memanggil fungsi onLogin dari props
+        navigate("/home");
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorCode, errorMessage);
+        alert(`${errorCode} - ${errorMessage}`);
       });
   };
 
@@ -58,7 +58,7 @@ const Login = () => {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={onLogin}
+                onClick={handleLogin} // Memanggil handleLogin saat tombol diklik
                 className="w-100 mt-5"
               >
                 Login

@@ -4,7 +4,6 @@ import {
   ListCategories,
   CartList,
   Menus,
-  NavBar,
 } from "../components/Component";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -102,8 +101,6 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <NavBar />
       <div className="mt-3">
         <Container fluid>
           <Row>
@@ -125,7 +122,6 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-    </div>
   );
 };
 
