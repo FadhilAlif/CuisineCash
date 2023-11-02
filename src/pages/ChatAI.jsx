@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { ThreeDots } from "react-loader-spinner";
-import { NavBar } from "../components/Component";
 import OpenAI from "openai";
 
 const ChatAI = () => {
@@ -42,8 +41,6 @@ const ChatAI = () => {
   };
 
   return (
-    <div>
-      <NavBar />
       <div className="container mt-4 col-md-8">
         <h4 className="text-center">
           <strong>Chat AI</strong>
@@ -76,7 +73,6 @@ const ChatAI = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
