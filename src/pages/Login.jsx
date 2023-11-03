@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -11,19 +12,61 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        sessionStorage.setItem("user", JSON.stringify(user));
-        onLogin(); // Memanggil fungsi onLogin dari props
-        navigate("/home");
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(`${errorCode} - ${errorMessage}`);
+
+    // Validasi email dan password
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^.{6,}$/;
+
+    if (email === "" || password === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Email and Password cannot be empty",
       });
+    } else if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please enter a valid email address",
+      });
+    } else if (password.length < 6) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 6 characters",
+      });
+    } else if (!passwordRegex.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must meet the required criteria",
+      });
+    } else {
+      // Auth email dan pass menggunakan Firebase Authentication
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          sessionStorage.setItem("user", JSON.stringify(user));
+          onLogin();
+          Swal.fire({
+            icon: "success",
+            title: "Login Successful",
+            text: "You have successfully logged in",
+          });
+          navigate("/home");
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: errorMessage,
+          });
+        });
+    }
   };
 
   return (
@@ -33,7 +76,7 @@ const Login = ({ onLogin }) => {
           <Col md={6} className="login-container">
             <Form>
               <h2 className="text-center">
-                <strong>Login Page</strong>
+                <strong>Login</strong>
               </h2>
               <Form.Group controlId="formBasicEmail" className="mt-4">
                 <Form.Label>Email address</Form.Label>
