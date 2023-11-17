@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import {
-  ListCategories,
-  CartList,
-  Menus,
-} from "../components/Component";
+import { ListCategories, CartList, Menus } from "../components/Component";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { RotatingLines } from "react-loader-spinner";
 
 const Home = () => {
   const [menus, setMenus] = useState([]);
@@ -101,27 +98,38 @@ const Home = () => {
   };
 
   return (
-      <div className="mt-3">
-        <Container fluid>
-          <Row>
-            <ListCategories
-              selectedCategories={selectedCategories}
-              handleCategories={handleCategories}
-            />
-            <Col className="mt-2">
-              <Row className="overflow-auto menus">
-                {menus &&
-                  menus.map((menu) => {
-                    return (
-                      <Menus key={menu.id} menu={menu} addCart={addCart} />
-                    );
-                  })}
-              </Row>
-            </Col>
-            <CartList cartList={cartList} getCartData={getCartData} />
-          </Row>
-        </Container>
-      </div>
+    <div className="mt-3">
+      <Container fluid>
+        <Row>
+          <ListCategories
+            selectedCategories={selectedCategories}
+            handleCategories={handleCategories}
+          />
+          <Col className="mt-2">
+            <Row className="overflow-auto menus">
+              {menus.length === 0 ? (
+                <div className="text-center ">
+                  <h4>Loading Menus...</h4>
+                  <RotatingLines
+                    strokeColor=" #ff7a28"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="96"
+                    visible={true}
+                  />
+                </div>
+              ) : (
+                menus &&
+                menus.map((menu) => {
+                  return <Menus key={menu.id} menu={menu} addCart={addCart} />;
+                })
+              )}
+            </Row>
+          </Col>
+          <CartList cartList={cartList} getCartData={getCartData} />
+        </Row>
+      </Container>
+    </div>
   );
 };
 
