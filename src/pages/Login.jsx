@@ -106,6 +106,15 @@ const Login = ({ onLogin }) => {
               >
                 Login
               </Button>
+              <p className="text-center mt-3">Don`t have an account?</p>
+              <p className="text-center mt-3 mb-2">
+                Users hint to pass Login :
+                <div className="text-start" style={{ marginLeft: "120px" }}>
+                  <a>Email : users@gmail.com</a>
+                  <br />
+                  <a>Pass : users123</a>
+                </div>
+              </p>
             </Form>
           </Col>
         </Row>
