@@ -1,6 +1,6 @@
 
 # CUISINE CASH (CASHIER APP)
-Sebuah aplikasi kasir yang saya develop menggunakan React JS. Aplikasi ini diharapkan dapat membantu Pemilik (Admin) dan Pengunjung (User) dari sebuah Restoran, Coffe Shop, dan bisnis kuliner lainnya dalam membantu transaksi penjualan mereka agar lebih cepat dan efisien.
+Sebuah aplikasi kasir yang saya develop menggunakan React JS. Aplikasi ini diharapkan dapat membantu Pemilik (Admin) dan Pengunjung (User) dari sebuah Restoran, Coffe Shop, dan bisnis kuliner lainnya dalam membantu transaksi kasir mereka agar lebih cepat dan efisien.
 ## API Reference
 
 Saya menggunakan JSON Server sebagai backend dari aplikasi saya dan mendeploy data json tersebut ke cloud server dari render.com agar bisa digunakan secara online.
